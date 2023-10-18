@@ -1,0 +1,54 @@
+# Define functions that can be applied to different data types
+def list_functions(data):
+    if isinstance(data, list):
+        return {
+            'length': len(data),
+            'append': data.append,
+            'remove': data.remove,
+            'sort': data.sort,
+        }
+    return None
+
+def dict_functions(data):
+    if isinstance(data, dict):
+        return {
+            'keys': data.keys,
+            'values': data.values,
+            'items': data.items,
+        }
+    return None
+
+def set_functions(data):
+    if isinstance(data, set):
+        return {
+            'length': len(data),
+            'add': data.add,
+            'remove': data.remove,
+        }
+    return None
+
+def tuple_functions(data):
+    if isinstance(data, tuple):
+        return {
+            'length': len(data),
+            'index': data.index,
+            'count': data.count,
+        }
+    return None
+
+# Create example data structures
+example_list = [1, 2, 3]
+example_dict = {'a': 1, 'b': 2, 'c': 3}
+example_set = {4, 5, 6}
+example_tuple = (7, 8, 9)
+
+# Create a dictionary that maps data types to their respective functions
+function_dict = {
+    'list': list_functions(example_list),
+    'dict': dict_functions(example_dict),
+    'set': set_functions(example_set),
+    'tuple': tuple_functions(example_tuple),
+}
+
+# Print the dictionary
+print(function_dict)
